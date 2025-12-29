@@ -1,5 +1,8 @@
 from pydantic import BaseModel
 
+# ---------------------------
+# EXISTING SCHEMAS (UNCHANGED)
+# ---------------------------
 class AnalyzeRequest(BaseModel):
     code: str
     logs: str
@@ -15,3 +18,11 @@ class AnalyzeResponse(BaseModel):
     severity: str
     fixed_code: str
     explanation: str
+
+
+# ---------------------------
+# NEW: COLLAB SESSION SCHEMA
+# ---------------------------
+class CreateSessionResponse(BaseModel):
+    session_id: str
+    join_url: str
